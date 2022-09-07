@@ -81,6 +81,8 @@ namespace MinimalRepro
 
 		#region Scalar Functions
 		#region ExampleFunction
+		// SQL Server requires the `dbo.` qualifier for this function; also, wrapping the function name
+        //   in [] when calling it results in a SQL syntax error.
 		[Sql.Function("dbo.ExampleFunction", ServerSideOnly = true)]
 		public static int? ExampleFunction(int? k)
 		{
